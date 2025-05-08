@@ -13,18 +13,62 @@ html, body{
 body{
     display: grid;
     grid: 1fr 9fr / 2fr 5fr 4fr;
+    background-image: url("./components/nav/assets/Shop-BG.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
 }
 
 header{
     grid-column: 1 / 4;
-    grid-row: 1 / 2; 
+    grid-row: 1; 
+    height: 10vh;
+    background-color: rgba(0, 0, 0, 0.711);
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.709);
+    margin-bottom: 5vh;
+}
+
+#home-button {
+    appearance: none;
+    border: none;
+    outline: none;
+    background-color: rgb(224, 101, 0);
+    font-size: 1.1rem;
+    padding: 10px 20px;
+    margin-left: 60%;
+    box-shadow:  -3px -3px 5px 5px rgb(219, 121, 41) inset  ;
+    border-radius: 20px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+#home-button:active{
+    transform: translateY(3px);
+    background-color: rgb(197, 89, 0);
 }
 
 nav {
     grid-column: 3 / 4;
     grid-row: 1; 
     display: flex;
-    flex-direction: row-reverse;
+    justify-content: flex-end;
+    height: 100%;
+}
+
+nav > button {
+    appearance: none;
+    border: none;
+    outline: none;
+    background: none;
+    height: 100%;
+    font-size: 1.3rem;
+    color: rgb(228, 226, 208);
+    font-weight: 700;
+    font-family:monospace;
+    letter-spacing: 1px;
+    margin-right: 100px;
+    padding: 0 20px;
 }
 
 #content{
@@ -33,6 +77,89 @@ nav {
 }
 
 img{
-    height: 220px;
+    height: 160px;
     width: auto;
+    box-shadow: -3px 3px 5px rgba(149, 149, 149, 0.508);
+    border-radius: 5px;
+}
+
+#menu-title {
+    display: flex;
+    justify-content: center;
+    background-color: rgb(228, 226, 208);
+    margin: 0 30%;
+    font-size: 3rem;
+    font-weight: 700;
+    border-radius: 10px;
+}
+
+#menu{
+    display: grid;
+    grid: repeat(2, 1fr) / repeat(3, 1fr);
+    padding: 20px;
+    gap: 20px;
+}
+
+.drink{
+    display: grid;
+    grid: 24px 120px 60px/ 1fr 1fr;
+    grid-template-areas: 
+    "name name"
+    "img desc"
+    "img price";
+    justify-items: center;
+    /* align-items: center; */
+    background-color: rgb(228, 226, 208);
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.487);
+}   
+
+.drink > .name {
+    grid-area: name;
+}
+
+.drink > .description {
+    grid-area: desc;
+    /* padding-left: 10px; */
+    /* align-self: center; */
+}
+
+.drink > .image {
+    grid-area: img;
+}
+
+.drink > .price {
+    grid-area: price;
+    font-size: 1.6rem;
+}
+
+#content{
+    position: relative;
+}
+
+#home-container, #contact-container{
+    position: absolute;
+    top: 15vh;
+    left: 5vw;
+    height: 40vh;
+    width: 40vw;
+    background-color: rgb(228, 226, 208);
+    padding: 10vh 5vh;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.487);   
+}
+
+#contact-container > * {
+    padding-bottom: 5px;
+}
+
+#contact-container:nth-child(1) {
+    padding-top: 6vh;
+}
+
+.highlight{
+    background-color: rgb(228, 226, 208);
+    color: rgb(46, 46, 46);
+    box-shadow: 0 0 10px 10px rgb(228, 226, 208);
 }

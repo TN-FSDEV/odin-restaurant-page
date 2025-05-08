@@ -1,8 +1,11 @@
 import { default as listOfDrinks } from "./submenu.js"
 export default function (content) {
+    const menuTitle = document.createElement("div");
+    menuTitle.id = "menu-title";
+    menuTitle.textContent = "MENU";
     const container = document.createElement("div");
-    container.id = "menu"
-    content.appendChild(container);
+    container.id = "menu";
+    content.append(menuTitle, container);
 
     for (let i = 0; i < 6; i++){
         const choice = document.createElement("div");
